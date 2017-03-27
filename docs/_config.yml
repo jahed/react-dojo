@@ -85,7 +85,7 @@ logo:
   title: React
   subtitle: Dojo
   url: http://jahed.github.io/react-dojo
-favicon: images/react.svg
+favicon: images/react.png
 
 nav_links:
   'Source':
