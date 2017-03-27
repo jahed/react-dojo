@@ -67,7 +67,7 @@ npm install --save-dev babel babel-core babel-plugin-transform-runtime
 
 For our app, Babel will be taking our source code and converting it to ES5. Our source code will use the following, each needing a Babel Preset:
 
-#### ES2015
+#### ECMAScript 2015
 
 ES2015 is the latest version of ECMAScript which introduced new syntax such as `import`, `const`, `let` and arrow functions.
 
@@ -103,3 +103,31 @@ To configure Babel, we can add a `.babelrc` to the root of our project.
 ```
 
 Here we're using some pre-defined configuration to transform the previously mentioned syntax. We're also using the [`transform-runtime`](https://babeljs.io/docs/plugins/transform-runtime/) plugin which has various conveniences which you can read up on [here](https://babeljs.io/docs/plugins/transform-runtime/).
+
+## Webpack
+
+Webpack is a module bundler. It takes our source code and bundles it into a single entry point. This allows us to modularise our code using ES2015 modules while maintaining compatibility in web browsers. It also reduces the number of requests we make to grab our assets from the client-side.
+
+To do this, Webpack takes our source code and takes it through multiple transformations. There are two phases to these transformations: Loaders and Plugins.
+
+> Note: We'll be using Webpack 1.x. Webpack 2.x has been released as of writing but for our needs, they aren't too different.
+
+
+#### Loaders
+
+The first step of the pipeline are the loaders. Loaders define how a file should be read, they essentially take arbritrary input as text and resolve to JavaScript as text. So, for example, a text file can be wrapped in double quotes to become Javascript strings.
+
+We'll be using the following loaders:
+
+#### babel-loader
+
+#### json-loader
+
+#### sass-loader
+
+#### css-loader
+
+#### style-loader
+
+#### file-loader
+
