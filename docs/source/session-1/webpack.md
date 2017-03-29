@@ -8,9 +8,11 @@ Webpack is a module bundler. It takes our source code and bundles it into a sing
 
 To do this, Webpack takes our source code and passes it through multiple transformations. There are two phases to these transformations: Loaders and Plugins.
 
-> Note: We'll be using Webpack 1.x. Webpack 2.x has been released as of writing but for our needs, they aren't too different.
-
-> Note: This can seem extremely complicated. You can look at the Project Template to see where we are heading.
+> ### Note
+>
+> We'll be using Webpack 1.x. Webpack 2.x has been released as of writing but for our needs, they aren't too different.
+>
+> Configuring Webpack can seem extremely complicated. You can look at the Project Template to see where we are heading.
 
 ## Configuring Webpack
 
