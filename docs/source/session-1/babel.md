@@ -45,3 +45,17 @@ JSX is XML in Javascript. This is useful for writing your React components like 
 ```
 npm install --save-dev babel-preset-react
 ```
+
+## Conclusion
+
+You should now have a project directory which looks something like:
+
+```
+./react-dojo/
+├── node_modules
+├── source
+│   └── index.jsx
+├── .babelrc
+├── .gitignore
+└── package.json
+```

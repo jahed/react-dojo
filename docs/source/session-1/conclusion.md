@@ -3,7 +3,7 @@ title: Conclusion
 description: "Wrapping up."
 ---
 
-You should now have a project directory which looks something like:
+After you've done all the set up, you should have a project directory which looks something like:
 
 ```
 ./react-dojo/
