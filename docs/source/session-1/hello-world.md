@@ -49,3 +49,5 @@ You should now have a project directory which looks something like:
 ├── .gitignore
 └── package.json
 ```
+
+We won't be able to run our app yet as we need to first build it!
