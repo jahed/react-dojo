@@ -225,7 +225,12 @@
 <p>Make it a Node package. You can skip through the options it gives you.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm init</div></pre></td></tr></table></figure>
 <p>This will create a <code>package.json</code> at the root of your project.</p>
-
+<p>Let’s create a source directory.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir source</div></pre></td></tr></table></figure>
+<p>And finally a <code>.gitignore</code> containing the following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">node_modules</div><div class="line">*.log</div><div class="line">build</div></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>You should now have a project directory which looks something like:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">./react-dojo/</div><div class="line">├── node_modules</div><div class="line">├── source</div><div class="line">├── .gitignore</div><div class="line">└── package.json</div></pre></td></tr></table></figure>
     </div>
   </div>
 
