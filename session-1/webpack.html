@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Basic -->
+    <title>Webpack | React Dojo</title>
+    <meta name="description" content="Bundling our assets and dependencies.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/react-dojo/images/favicon.png" sizes="16x16 32x32 64x64">
+
+    <!-- Social -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://jahed.github.io/react-dojo">
+    <meta property="og:title" content="Webpack | React Dojo">
+    <meta property="og:description" content="Bundling our assets and dependencies.">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_image_large">
+    <meta name="twitter:site" content="@hedjahead">
+    <meta name="twitter:title" content="Webpack | React Dojo">
+    <meta name="twitter:description" content="Bundling our assets and dependencies.">
+    <meta name="twitter:image" content="">
+
+    <!-- Misc -->
+    <meta name="google-site-verification" content="" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/react-dojo/style/style.css">
+  </head>
+  <body class="">
+    
+
+<div class="nav dark">
+  <div class="nav-group">
+    <div class="nav-item show-mobile">
+      <span class="js-sidebar-toggle ">
+        <span class="icon-menu"></span>
+      </span>
+    </div>
+    <div class="nav-item">
+      <a class="logo-wrapper" href="http://jahed.github.io/react-dojo" title="React Dojo"  >
+        <!--<img src="images/react.svg" alt="React" class="logo"/> -->
+        <span>React</span>
+        <span>Dojo</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="nav-group right">
+    
+      <div class="nav-item show-desktop  separator">
+        <a class="link" href="http://github.com/jahed/react-dojo"  >
+          <span>Source</span>
+        </a>
+      </div>
+    
+  </div>
+</div>
+
+<div class="sidebar">
+  <div class="panel">
+    <!--
+    <div class="panel-item">
+      <a class="" href="http://jahed.github.io/react-dojo" title="React"  >
+        <span>React Dojo</span>
+      </a>
+    </div>
+    -->
+    
+      <div class="panel-item "">
+        <a class="" href="http://github.com/jahed/react-dojo"  >
+          <span>Source</span>
+        </a>
+      </div>
+    
+  </div>
+
+  <div class="sidebar-content">
+    <div class="topcap">
+      <!--
+      <span class="title-sidebar">React Dojo</span>
+      -->
+      
+    </div>
+
+    
+
+    <ul class="toc">
+      
+        <li>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="../index.html" class="sidebar-link ">
+                  <span>Introduction</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Session 1</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="index.html" class="sidebar-link ">
+                  <span>The React Ecosystem</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="prerequisites.html" class="sidebar-link ">
+                  <span>Prerequisites</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="create-a-new-project.html" class="sidebar-link ">
+                  <span>Create a New Project</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="managing-dependencies.html" class="sidebar-link ">
+                  <span>Managing Dependencies</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="hello-world.html" class="sidebar-link ">
+                  <span>Hello World</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="babel.html" class="sidebar-link ">
+                  <span>Babel</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
+                  <span>Webpack</span>
+                </a>
+              </li>
+            
+              
+              <li class="item-toc ">
+                <a href="conclusion.html" class="sidebar-link ">
+                  <span>Conclusion</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Session 2</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="../session-2.html" class="sidebar-link ">
+                  <span>Basics</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+        <li>
+          
+            <div class="heading-toc">Session 3</div>
+          
+          <ul class="list-toc">
+            
+              
+              <li class="item-toc ">
+                <a href="../session-3.html" class="sidebar-link ">
+                  <span>State Management</span>
+                </a>
+              </li>
+            
+          </ul>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+  <div class="content-wrapper">
+    <div class="header-content">
+      <h1 class="title-page">Webpack</h1>
+      
+        <div class="subtitle-page">Bundling our assets and dependencies.</div>
+      
+
+      <!--
+      <div class="page-actions">
+        <div class="actions-group">
+          <a class="btn tertiary small round lowercase" href="https://github.com/jahed/react-dojo/tree/master/docs/source/session-1/webpack.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          
+        </div>
+      </div>
+      -->
+    </div>
+
+    <div class="document-formatting">
+      <p>Webpack is a module bundler. It takes our source code and bundles it into a single entry point. This allows us to modularise our code using ES2015 modules while maintaining compatibility in web browsers. It also reduces the number of requests we make to grab our assets from the client-side.</p>
+<p>To do this, Webpack takes our source code and passes it through multiple transformations. There are two phases to these transformations: Loaders and Plugins.</p>
+<blockquote>
+<p>Note: We’ll be using Webpack 1.x. Webpack 2.x has been released as of writing but for our needs, they aren’t too different.</p>
+</blockquote>
+<h2 id="Loaders"><a href="#Loaders" class="headerlink" title="Loaders"></a>Loaders</h2><p>The first step of the pipeline are the loaders. Loaders define how a file should be read, they essentially take arbritrary input as text and resolve to JavaScript as text. So, for example, a text file can be wrapped in double quotes to become Javascript strings.</p>
+<p>We’ll be using the following loaders:</p>
+<h3 id="babel-loader"><a href="#babel-loader" class="headerlink" title="babel-loader"></a>babel-loader</h3><p>The <code>babel-loader</code> can take our JavaScript and JSX files and transpile it into browser-compatible JavaScript using Babel.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">test</span>: <span class="regexp">/\.jsx?$/</span>,</div><div class="line">    <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span>,</div><div class="line">    <span class="attr">loader</span>: <span class="string">'babel'</span>,</div><div class="line">    <span class="attr">query</span>: &#123; <span class="attr">cacheDirectory</span>: <span class="literal">true</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="json-loader"><a href="#json-loader" class="headerlink" title="json-loader"></a>json-loader</h3><p>The <code>json-loader</code> converts JSON into a JavaScript object.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">test</span>: <span class="regexp">/\.json$/</span>,</div><div class="line">    <span class="attr">loader</span>: <span class="string">'json'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="style-loader"><a href="#style-loader" class="headerlink" title="style-loader"></a>style-loader</h3><p>The <code>style-loader</code> itself isn’t very useful. It needs to be given a string of CSS in order to inject it into the DOM as a <code>&lt;style&gt;</code> tag. We can do this using an ordered array of loaders as you’ll see for the <code>css-loader</code> and <code>sass-loader</code>.</p>
+<h3 id="css-loader"><a href="#css-loader" class="headerlink" title="css-loader"></a>css-loader</h3><p>The <code>css-loader</code> converts CSS into a JavaScript String. The <code>root</code> is used to resolve asset dependencies like images.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">test</span>: <span class="regexp">/\.css$/</span>,</div><div class="line">    <span class="attr">loaders</span>: [<span class="string">'style'</span>, <span class="string">`css?root=<span class="subst">$&#123;sourceRoot&#125;</span>`</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="sass-loader"><a href="#sass-loader" class="headerlink" title="sass-loader"></a>sass-loader</h3><p>The <code>sass-loader</code> compiles SASS into CSS.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">test</span>: <span class="regexp">/\.scss$/</span>,</div><div class="line">    <span class="attr">loaders</span>: [<span class="string">'style'</span>, <span class="string">`css?root=<span class="subst">$&#123;sourceRoot&#125;</span>`</span>, <span class="string">'sass'</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="file-loader"><a href="#file-loader" class="headerlink" title="file-loader"></a>file-loader</h3><p>The <code>file-loader</code> will copy over a required asset into the build under the given <code>name</code> option and resolve to a string pointing to the path the asset’s been placed.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="comment">// Images</span></div><div class="line">    test: <span class="regexp">/\.(jpg|gif|png|svg|ico)(\?.*)?$/</span>,</div><div class="line">    <span class="attr">loader</span>: <span class="string">'file?name=[path][name].[ext]'</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">    <span class="comment">// Fonts</span></div><div class="line">    test: <span class="regexp">/\.(eot|ttf|woff|woff2)(\?.*)?$/</span>,</div><div class="line">    <span class="attr">loader</span>: <span class="string">'file?name=[path][name].[ext]'</span></div><div class="line">&#125;,</div><div class="line">&#123;</div><div class="line">    <span class="comment">// Audio</span></div><div class="line">    test: <span class="regexp">/\.(ogg|wav|mp3)(\?.*)?$/</span>,</div><div class="line">    <span class="attr">loader</span>: <span class="string">'file?name=[path][name].[ext]'</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h2 id="Plugins"><a href="#Plugins" class="headerlink" title="Plugins"></a>Plugins</h2><h3 id="HtmlWebpackPlugin"><a href="#HtmlWebpackPlugin" class="headerlink" title="HtmlWebpackPlugin"></a>HtmlWebpackPlugin</h3><p>The <code>HtmlWebpackPlugin</code> takes an <a href="http://www.embeddedjs.com/" target="_blank" rel="external">EJS template</a> and generates a HTML file which will inject our entry files as <code>&lt;script&gt;</code> tags as part of the build in the <code>&lt;body&gt;</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> HtmlWebpackPlugin(&#123;</div><div class="line">    <span class="attr">filename</span>: <span class="string">'index.html'</span>,</div><div class="line">    <span class="attr">template</span>: <span class="string">'./index.html.ejs'</span>,</div><div class="line">    <span class="attr">inject</span>: <span class="string">'body'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>The <code>index.html.ejs</code> is placed in our <code>sourceRoot</code> and should look something like:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en-gb"</span> <span class="attr">prefix</span>=<span class="string">"og: http://ogp.me/ns#"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span> <span class="attr">name</span>=<span class="string">"viewport"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>My App | React Dojo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"ROOT"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- Our React elements are injected here --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Environment-specific-Configurations"><a href="#Environment-specific-Configurations" class="headerlink" title="Environment-specific Configurations"></a>Environment-specific Configurations</h2><p>We’ll want to change some of the configuration based on the environment we’re running on. For example, our production build should be minified to reduce data usage.</p>
+<p>First, we’ll need a way to toggle between environments. The most common way to do so in NodeJS apps is to use the <code>NODE_ENV</code> environment variable which we can use in our Webpack config using the <code>process.env.NODE_ENV</code> variable.</p>
+<p>Try making the environment toggle yourself. An implementation is also provided in the project template.</p>
+<h3 id="Development-Configuration"><a href="#Development-Configuration" class="headerlink" title="Development Configuration"></a>Development Configuration</h3><p>For <code>development</code> we can set the <code>devtool</code> to <code>inline-source-map</code> so that we can load the source mappings between our source code and bundled code in a single request.</p>
+<p>We can also set up the <code>devServer</code> so that it knows where to find our bundled files and reduce the amount of logging it outputs.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">id</span>: <span class="string">'development'</span>,</div><div class="line">    <span class="attr">devtool</span>: <span class="string">'inline-source-map'</span>,</div><div class="line">    <span class="attr">devServer</span>: &#123;</div><div class="line">        <span class="attr">host</span>: <span class="string">'127.0.0.1'</span>,</div><div class="line">        <span class="attr">port</span>: <span class="number">8080</span>,</div><div class="line">        <span class="attr">contentBase</span>: outputRoot,</div><div class="line">        <span class="attr">historyApiFallback</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">stats</span>: &#123;</div><div class="line">            <span class="attr">context</span>: sourceRoot,</div><div class="line">            <span class="attr">colors</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">warnings</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">timings</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">reasons</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">errors</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">errorDetails</span>: <span class="literal">true</span>,</div><div class="line">            <span class="attr">assets</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">cached</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">children</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">version</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">hash</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">chunks</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">chunkModules</span>: <span class="literal">false</span>,</div><div class="line">            <span class="attr">modules</span>: <span class="literal">false</span>,</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Dev-Server"><a href="#Dev-Server" class="headerlink" title="Dev Server"></a>Dev Server</h4><p>To use the Dev Server we’ll need to install it.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev webpack-dev-server</div></pre></td></tr></table></figure>
+<p>The Dev Server is useful for automatically watching for file changes and rebuilding the project. It also keeps the build in-memory and doesn’t write anything to disk; making the development cycle a lot faster.</p>
+<h3 id="Production-Configuration"><a href="#Production-Configuration" class="headerlink" title="Production Configuration"></a>Production Configuration</h3><p>For <code>production</code> we can minify the bundle using <code>UglifyJsPlugin</code>. Since we want to do this after the common plugins, we can put it under a custom <code>postPlugins</code> property and concatenate them in the final configuration.</p>
+<p>We can also set the <code>devtool</code> to <code>nosource-source-map</code> so that we can see line number mappings but not expose the source code to the public internet.</p>
+<p>So that we don’t end up building an invalid bundle, we can set the build to <code>bail</code> as soon as there’s an error.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">id</span>: <span class="string">'production'</span>,</div><div class="line">    <span class="attr">postPlugins</span>: [</div><div class="line">        <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(&#123;</div><div class="line">            <span class="attr">compress</span>: &#123;</div><div class="line">                <span class="attr">screw_ie8</span>: <span class="literal">true</span>,</div><div class="line">                <span class="attr">warnings</span>: <span class="literal">false</span></div><div class="line">            &#125;</div><div class="line">        &#125;)</div><div class="line">    ],</div><div class="line">    <span class="attr">bail</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">devtool</span>: <span class="string">'nosources-source-map'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="DefinePlugin"><a href="#DefinePlugin" class="headerlink" title="DefinePlugin"></a>DefinePlugin</h3><p>Some JavaScript libraries also use <code>NODE_ENV</code> to toggle the amount of logging they do. However, since the <code>NODE_ENV</code> is only available in the NodeJS environment and not the browser, we’ll need to resolve this variable in our source files as part of the build. We can do this using the <code>DefinePlugin</code> which essentially does a string-replace.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.DefinePlugin(&#123;</div><div class="line">    <span class="string">'process.env.NODE_ENV'</span>: <span class="built_in">JSON</span>.stringify(environment.id)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="Running-the-Build"><a href="#Running-the-Build" class="headerlink" title="Running the Build"></a>Running the Build</h2><p>Now that we’ve got our <code>webpack.config.js</code> set up, we can run the build. There are multiple ways to build a project.</p>
+<blockquote>
+<p>Note: If you’re using Windows, you’ll want to install <code>cross-env</code> and prefix your commands with it so that you can provide environment variables in a uniform way.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev cross-env</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="Building-for-Development"><a href="#Building-for-Development" class="headerlink" title="Building for Development"></a>Building for Development</h3><p>We can run the Dev Server.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NODE_ENV=development webpack-dev-server --progress</div></pre></td></tr></table></figure>
+<h3 id="Building-for-Production"><a href="#Building-for-Production" class="headerlink" title="Building for Production"></a>Building for Production</h3><p>Just run Webpack!</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NODE_ENV=production webpack</div></pre></td></tr></table></figure>
+
+    </div>
+  </div>
+
+  <div class="pagination">
+    <div class="content-wrapper">
+      
+      
+        <a class="link primary prev"
+          href="babel.html">
+          <span class="icon-arrow-left-alt"></span>
+          <span class="subtitle-pagination">Previous</span>
+          Babel
+        </a>
+      
+      
+        <a class="link primary next"
+          href="conclusion.html">
+          <span class="subtitle-pagination">Next</span>
+          Conclusion
+          <span class="icon-arrow-right-alt"></span>
+        </a>
+      
+    </div>
+  </div>
+
+  <div class="github">
+    <a class="link tertiary " href="https://github.com/jahed/react-dojo/tree/master/docs/source/session-1/webpack.md" target="_blank">
+      <span class="icon-github"></span>Edit on GitHub</a>
+  </div>
+
+  
+</div>
+
+    <script src="/react-dojo/script/smooth-scroll.min.js"></script>
+    <script src="/react-dojo/script/main.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/docsearch.js/2.1.8/docsearch.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+
+    <script>
+      // nectar ninja
+      (function(){
+        var handle = '@meteorjs';
+        var a = document.createElement('script');
+        var m = document.getElementsByTagName('script')[0];
+        a.async = 1;
+        a.src = 'https://nectar.ninja/api/v1/' + handle.slice(1);
+        m.parentNode.insertBefore(a, m);
+      })();
+
+     
+      
+
+      // search box
+      
+
+      
+    </script>
+  </body>
+</html>

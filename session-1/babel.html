@@ -4,21 +4,21 @@
     <meta charset="utf-8">
 
     <!-- Basic -->
-    <title>Introduction | React Dojo</title>
-    <meta name="description" content="Documentation for the React Dojo">
+    <title>Babel | React Dojo</title>
+    <meta name="description" content="Using cutting edge and augmented JavaScript.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/react-dojo/images/favicon.png" sizes="16x16 32x32 64x64">
 
     <!-- Social -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://jahed.github.io/react-dojo">
-    <meta property="og:title" content="Introduction | React Dojo">
-    <meta property="og:description" content="Documentation for the React Dojo">
+    <meta property="og:title" content="Babel | React Dojo">
+    <meta property="og:description" content="Using cutting edge and augmented JavaScript.">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@hedjahead">
-    <meta name="twitter:title" content="Introduction | React Dojo">
-    <meta name="twitter:description" content="Documentation for the React Dojo">
+    <meta name="twitter:title" content="Babel | React Dojo">
+    <meta name="twitter:description" content="Using cutting edge and augmented JavaScript.">
     <meta name="twitter:image" content="">
 
     <!-- Misc -->
@@ -91,8 +91,8 @@
           <ul class="list-toc">
             
               
-              <li class="item-toc  current">
-                <a href="" class="sidebar-link  current">
+              <li class="item-toc ">
+                <a href="../index.html" class="sidebar-link ">
                   <span>Introduction</span>
                 </a>
               </li>
@@ -108,56 +108,56 @@
             
               
               <li class="item-toc ">
-                <a href="session-1/index.html" class="sidebar-link ">
+                <a href="index.html" class="sidebar-link ">
                   <span>The React Ecosystem</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="session-1/prerequisites.html" class="sidebar-link ">
+                <a href="prerequisites.html" class="sidebar-link ">
                   <span>Prerequisites</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="session-1/create-a-new-project.html" class="sidebar-link ">
+                <a href="create-a-new-project.html" class="sidebar-link ">
                   <span>Create a New Project</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="session-1/managing-dependencies.html" class="sidebar-link ">
+                <a href="managing-dependencies.html" class="sidebar-link ">
                   <span>Managing Dependencies</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="session-1/hello-world.html" class="sidebar-link ">
+                <a href="hello-world.html" class="sidebar-link ">
                   <span>Hello World</span>
                 </a>
               </li>
             
               
-              <li class="item-toc ">
-                <a href="session-1/babel.html" class="sidebar-link ">
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
                   <span>Babel</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="session-1/webpack.html" class="sidebar-link ">
+                <a href="webpack.html" class="sidebar-link ">
                   <span>Webpack</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="session-1/conclusion.html" class="sidebar-link ">
+                <a href="conclusion.html" class="sidebar-link ">
                   <span>Conclusion</span>
                 </a>
               </li>
@@ -173,7 +173,7 @@
             
               
               <li class="item-toc ">
-                <a href="session-2.html" class="sidebar-link ">
+                <a href="../session-2.html" class="sidebar-link ">
                   <span>Basics</span>
                 </a>
               </li>
@@ -189,7 +189,7 @@
             
               
               <li class="item-toc ">
-                <a href="session-3.html" class="sidebar-link ">
+                <a href="../session-3.html" class="sidebar-link ">
                   <span>State Management</span>
                 </a>
               </li>
@@ -204,15 +204,15 @@
 <div class="content">
   <div class="content-wrapper">
     <div class="header-content">
-      <h1 class="title-page">Introduction</h1>
+      <h1 class="title-page">Babel</h1>
       
-        <div class="subtitle-page">Documentation for the React Dojo</div>
+        <div class="subtitle-page">Using cutting edge and augmented JavaScript.</div>
       
 
       <!--
       <div class="page-actions">
         <div class="actions-group">
-          <a class="btn tertiary small round lowercase" href="https://github.com/jahed/react-dojo/tree/master/docs/source/index.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          <a class="btn tertiary small round lowercase" href="https://github.com/jahed/react-dojo/tree/master/docs/source/session-1/babel.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
           
         </div>
       </div>
@@ -220,10 +220,18 @@
     </div>
 
     <div class="document-formatting">
-      <p>Welcome to the React Dojo. Throughout this dojo you’ll hopefully be learning the basics of <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> and the ecosystem around it including <a href="https://webpack.github.io/" target="_blank" rel="external">Webpack</a> and <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a>.</p>
-<h2 id="Useful-Links"><a href="#Useful-Links" class="headerlink" title="Useful Links"></a>Useful Links</h2><ul>
-<li><a href="https://facebook.github.io/react/docs/react-api.html" target="_blank" rel="external">React Reference Docs</a></li>
-</ul>
+      <p>Babel is a transpiler for Javascript. Essentially, it takes source code in one form and transforms it into another. Let’s install it in our project.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev babel babel-core babel-plugin-transform-runtime</div></pre></td></tr></table></figure>
+<p>For our app, Babel will be taking our source code and converting it to ES5. To do this, we’ll need to add a <code>.babelrc</code> to the root of our project.</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"presets"</span>: [<span class="string">"es2015"</span>, <span class="string">"stage-3"</span>, <span class="string">"react"</span>],</div><div class="line">    <span class="attr">"plugins"</span>: [<span class="string">"transform-runtime"</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Here we’re using the <a href="https://babeljs.io/docs/plugins/transform-runtime/" target="_blank" rel="external"><code>transform-runtime</code></a> plugin which has various conveniences which you can read up on <a href="https://babeljs.io/docs/plugins/transform-runtime/" target="_blank" rel="external">here</a>. </p>
+<p>The presets allows us to use the following:</p>
+<h2 id="ECMAScript-2015"><a href="#ECMAScript-2015" class="headerlink" title="ECMAScript 2015"></a>ECMAScript 2015</h2><p>ES2015 is the latest version of ECMAScript which introduced new syntax such as <code>import</code>, <code>const</code>, <code>let</code> and arrow functions.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev babel-preset-es2015</div></pre></td></tr></table></figure>
+<h2 id="ECMAScript-Stage-3-Candidate-Features"><a href="#ECMAScript-Stage-3-Candidate-Features" class="headerlink" title="ECMAScript Stage 3 Candidate Features"></a>ECMAScript Stage 3 Candidate Features</h2><p>ECMAScript feature requests go through the <a href="http://exploringjs.com/es2016-es2017/ch_tc39-process.html" target="_blank" rel="external">TC39 process</a>. Stage 3 features are essentially candidates for the next version, waiting for feedback before being finalised. They are usually safe to use.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev babel-preset-stage-3</div></pre></td></tr></table></figure>
+<h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><p>JSX is XML in Javascript. This is useful for writing your React components like HTML elements instead of nested functions, making it more intuitive.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev babel-preset-react</div></pre></td></tr></table></figure>
 
     </div>
   </div>
@@ -232,11 +240,18 @@
     <div class="content-wrapper">
       
       
+        <a class="link primary prev"
+          href="hello-world.html">
+          <span class="icon-arrow-left-alt"></span>
+          <span class="subtitle-pagination">Previous</span>
+          Hello World
+        </a>
+      
       
         <a class="link primary next"
-          href="session-1/index.html">
+          href="webpack.html">
           <span class="subtitle-pagination">Next</span>
-          The React Ecosystem
+          Webpack
           <span class="icon-arrow-right-alt"></span>
         </a>
       
@@ -244,7 +259,7 @@
   </div>
 
   <div class="github">
-    <a class="link tertiary " href="https://github.com/jahed/react-dojo/tree/master/docs/source/index.md" target="_blank">
+    <a class="link tertiary " href="https://github.com/jahed/react-dojo/tree/master/docs/source/session-1/babel.md" target="_blank">
       <span class="icon-github"></span>Edit on GitHub</a>
   </div>
 
