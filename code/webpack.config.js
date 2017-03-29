@@ -3,7 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
 const sourceRoot = path.resolve('./source')
-const outputDir = path.resolve(`./build`)
+const outputRoot = path.resolve(`./build`)
+
+const environment = require('./webpack/environment')({
+    sourceRoot, outputRoot
+})
 
 module.exports = {
     target: 'web',
@@ -12,7 +16,7 @@ module.exports = {
         main: ['./index.jsx']
     },
     output: {
-        path: outputDir,
+        path: outputRoot,
         publicPath: '/',
         filename: 'javascripts/[name]-[chunkhash].js'
     },
@@ -25,12 +29,11 @@ module.exports = {
         ],
         unsafeCache: true
     },
-    devtool: 'inline-source-map',
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /node_modules/,
                 loader: 'babel',
                 query: { cacheDirectory: true }
             },
@@ -44,7 +47,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loaders: ['style', `css?root=${sourceRoot}`, "sass"]
+                loaders: ['style', `css?root=${sourceRoot}`, 'sass']
             },
             {
                 test: /\.(jpg|gif|png|svg|ico)(\?.*)?$/,
@@ -60,39 +63,17 @@ module.exports = {
             },
         ]
     },
-    plugins: [
+    plugins: (environment.prePlugins || []).concat([
         new webpack.DefinePlugin({
-            // Replacements for Dependencies
-            'process.env.NODE_ENV': JSON.stringify('development')
+            'process.env.NODE_ENV': JSON.stringify(environment.id)
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './index.html.ejs',
             inject: 'body'
         })
-    ],
-    devServer: {
-        host: '127.0.0.1',
-        port: 8080,
-        contentBase: outputDir,
-        historyApiFallback: true,
-        stats: {
-            context: sourceRoot,
-            colors: true,
-            warnings: true,
-            timings: true,
-            reasons: true,
-            errors: true,
-            errorDetails: true,
-
-            assets: false,
-            cached: false,
-            children: false,
-            version: false,
-            hash: false,
-            chunks: false,
-            chunkModules: false,
-            modules: false,
-        }
-    }
+    ]).concat(environment.postPlugins || []),
+    bail: environment.bail,
+    devtool: environment.devtool,
+    devServer: environment.devServer
 }

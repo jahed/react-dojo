@@ -85,7 +85,7 @@ logo:
   title: React
   subtitle: Dojo
   url: http://jahed.github.io/react-dojo
-favicon: images/react.png
+favicon: images/favicon.png
 
 nav_links:
   'Source':
@@ -98,7 +98,16 @@ content_root: docs/source
 sidebar_categories:
   null:
     - index
-  Sessions:
-    - session-1
+  Session 1:
+    - session-1/index
+    - session-1/prerequisites
+    - session-1/create-a-new-project
+    - session-1/managing-dependencies
+    - session-1/hello-world
+    - session-1/babel
+    - session-1/webpack
+    - session-1/conclusion
+  Session 2:
     - session-2
+  Session 3:
     - session-3
