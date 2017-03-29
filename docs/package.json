@@ -20,6 +20,6 @@
   "scripts": {
     "update": "npm update",
     "start": "hexo server",
-    "deploy": "hexo deploy"
+    "deploy": "hexo deploy --generate"
   }
 }
