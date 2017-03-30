@@ -83,6 +83,15 @@
     </div>
 
     
+    <div class="wrapper-search">
+      <div class="input-symbol small round">
+        <input type="text" placeholder="Search " id="desktop-search-input" />
+        <span class="icon-search"></span>
+      </div>
+      <div class="wrapper-desktop-search-results"></div>
+    </div>
+
+    
 
     <ul class="toc">
       
@@ -206,6 +215,13 @@
                 </a>
               </li>
             
+              
+              <li class="item-toc ">
+                <a href="../session-2/conclusion.html" class="sidebar-link ">
+                  <span>Conclusion</span>
+                </a>
+              </li>
+            
           </ul>
         </li>
       
@@ -305,7 +321,7 @@
     <script>
       // nectar ninja
       (function(){
-        var handle = '@meteorjs';
+        var handle = '@hedjahead';
         var a = document.createElement('script');
         var m = document.getElementsByTagName('script')[0];
         a.async = 1;
@@ -317,6 +333,35 @@
       
 
       // search box
+      
+
+        ['desktop'].forEach(function(type) {
+          var search = docsearch({
+            apiKey: '50b8cbfeea66dcb98aa83f280dc84626',
+            indexName: 'react-dojo',
+            inputSelector: '#' + type + '-search-input',
+            autocompleteOptions: {
+              dropdownMenuContainer: '.wrapper-' + type + '-search-results',
+              debug: true
+            },
+            algoliaOptions: {
+              hitsPerPage: 20
+            }
+          }).autocomplete;
+
+          var sidebar = document.querySelector('.sidebar-content');
+          search.on('autocomplete:opened', function() {
+            sidebar.classList.add('searching');
+          });
+          search.on('autocomplete:closed', function() {
+            sidebar.classList.remove('searching');
+          });
+          search.on('autocomplete:updated', function() {
+            if (search.val() === '') {
+              search.autocomplete.close();
+            }
+          });
+        });
       
 
       

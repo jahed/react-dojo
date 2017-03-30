@@ -83,6 +83,15 @@
     </div>
 
     
+    <div class="wrapper-search">
+      <div class="input-symbol small round">
+        <input type="text" placeholder="Search " id="desktop-search-input" />
+        <span class="icon-search"></span>
+      </div>
+      <div class="wrapper-desktop-search-results"></div>
+    </div>
+
+    
 
     <ul class="toc">
       
@@ -206,6 +215,13 @@
                 </a>
               </li>
             
+              
+              <li class="item-toc ">
+                <a href="../session-2/conclusion.html" class="sidebar-link ">
+                  <span>Conclusion</span>
+                </a>
+              </li>
+            
           </ul>
         </li>
       
@@ -309,14 +325,15 @@
 <p>Note: If you’re using Windows, you’ll want to install <code>cross-env</code> and prefix your commands with it so that you can provide environment variables in a uniform way.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev cross-env</div></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="Building-for-Development"><a href="#Building-for-Development" class="headerlink" title="Building for Development"></a>Building for Development</h3><p>We can run the Dev Server while developing.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NODE_ENV=development webpack-dev-server --progress</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NODE_ENV=development ./node_modules/.bin/webpack-dev-server --progress</div></pre></td></tr></table></figure>
 <p>This will start a HTTP server on <code>http://localhost:8080/</code> as defined in our <code>webpack.config.js</code>.</p>
 <h3 id="Building-for-Production"><a href="#Building-for-Production" class="headerlink" title="Building for Production"></a>Building for Production</h3><p>Just run Webpack!</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NODE_ENV=production webpack</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NODE_ENV=production ./node_modules/.bin/webpack</div></pre></td></tr></table></figure>
 <h3 id="Using-npm-to-run-commands"><a href="#Using-npm-to-run-commands" class="headerlink" title="Using npm to run commands"></a>Using npm to run commands</h3><p>We can alias commands using npm. Add the following to your <code>package.json</code>.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"scripts": &#123;</div><div class="line">  "start": "cross-env NODE_ENV=development webpack-dev-server --progress",</div><div class="line">  "build:production": "cross-env NODE_ENV=production webpack"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">"scripts": &#123;</div><div class="line">  "start": "NODE_ENV=development webpack-dev-server --progress",</div><div class="line">  "build:production": "NODE_ENV=production webpack"</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>Now you can just run the appropriate alias.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm run start</div><div class="line">npm run build:production</div></pre></td></tr></table></figure>
+<p>You don’t need the <code>./node_modules/.bin/</code> prefix as npm resolves it for you.</p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>You should now have a project directory which looks something like:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">./react-dojo/</div><div class="line">├── node_modules</div><div class="line">├── source</div><div class="line">│   ├── index.html.ejs</div><div class="line">│   └── index.jsx</div><div class="line">├── .babelrc</div><div class="line">├── .gitignore</div><div class="line">├── package.json</div><div class="line">└── webpack.config.js</div></pre></td></tr></table></figure>
 
@@ -361,7 +378,7 @@
     <script>
       // nectar ninja
       (function(){
-        var handle = '@meteorjs';
+        var handle = '@hedjahead';
         var a = document.createElement('script');
         var m = document.getElementsByTagName('script')[0];
         a.async = 1;
@@ -373,6 +390,35 @@
       
 
       // search box
+      
+
+        ['desktop'].forEach(function(type) {
+          var search = docsearch({
+            apiKey: '50b8cbfeea66dcb98aa83f280dc84626',
+            indexName: 'react-dojo',
+            inputSelector: '#' + type + '-search-input',
+            autocompleteOptions: {
+              dropdownMenuContainer: '.wrapper-' + type + '-search-results',
+              debug: true
+            },
+            algoliaOptions: {
+              hitsPerPage: 20
+            }
+          }).autocomplete;
+
+          var sidebar = document.querySelector('.sidebar-content');
+          search.on('autocomplete:opened', function() {
+            sidebar.classList.add('searching');
+          });
+          search.on('autocomplete:closed', function() {
+            sidebar.classList.remove('searching');
+          });
+          search.on('autocomplete:updated', function() {
+            if (search.val() === '') {
+              search.autocomplete.close();
+            }
+          });
+        });
       
 
       
