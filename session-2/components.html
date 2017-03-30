@@ -4,21 +4,21 @@
     <meta charset="utf-8">
 
     <!-- Basic -->
-    <title>The React Ecosystem | React Dojo</title>
-    <meta name="description" content="Setting up a React app">
+    <title>Components | React Dojo</title>
+    <meta name="description" content="Fundamental building blocks.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/react-dojo/images/favicon.png" sizes="16x16 32x32 64x64">
 
     <!-- Social -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://jahed.github.io/react-dojo">
-    <meta property="og:title" content="The React Ecosystem | React Dojo">
-    <meta property="og:description" content="Setting up a React app">
+    <meta property="og:title" content="Components | React Dojo">
+    <meta property="og:description" content="Fundamental building blocks.">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@hedjahead">
-    <meta name="twitter:title" content="The React Ecosystem | React Dojo">
-    <meta name="twitter:description" content="Setting up a React app">
+    <meta name="twitter:title" content="Components | React Dojo">
+    <meta name="twitter:description" content="Fundamental building blocks.">
     <meta name="twitter:image" content="">
 
     <!-- Misc -->
@@ -107,57 +107,57 @@
           <ul class="list-toc">
             
               
-              <li class="item-toc  current">
-                <a href="" class="sidebar-link  current">
+              <li class="item-toc ">
+                <a href="../session-1/index.html" class="sidebar-link ">
                   <span>The React Ecosystem</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="prerequisites.html" class="sidebar-link ">
+                <a href="../session-1/prerequisites.html" class="sidebar-link ">
                   <span>Prerequisites</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="create-a-new-project.html" class="sidebar-link ">
+                <a href="../session-1/create-a-new-project.html" class="sidebar-link ">
                   <span>Create a New Project</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="managing-dependencies.html" class="sidebar-link ">
+                <a href="../session-1/managing-dependencies.html" class="sidebar-link ">
                   <span>Managing Dependencies</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="hello-world.html" class="sidebar-link ">
+                <a href="../session-1/hello-world.html" class="sidebar-link ">
                   <span>Hello World</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="babel.html" class="sidebar-link ">
+                <a href="../session-1/babel.html" class="sidebar-link ">
                   <span>Babel</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="webpack.html" class="sidebar-link ">
+                <a href="../session-1/webpack.html" class="sidebar-link ">
                   <span>Webpack</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="conclusion.html" class="sidebar-link ">
+                <a href="../session-1/conclusion.html" class="sidebar-link ">
                   <span>Conclusion</span>
                 </a>
               </li>
@@ -173,35 +173,35 @@
             
               
               <li class="item-toc ">
-                <a href="../session-2/index.html" class="sidebar-link ">
+                <a href="index.html" class="sidebar-link ">
                   <span>Basics</span>
                 </a>
               </li>
             
               
-              <li class="item-toc ">
-                <a href="../session-2/components.html" class="sidebar-link ">
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
                   <span>Components</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="../session-2/creating-a-component.html" class="sidebar-link ">
+                <a href="creating-a-component.html" class="sidebar-link ">
                   <span>Creating a Component</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="../session-2/migrating-our-page.html" class="sidebar-link ">
+                <a href="migrating-our-page.html" class="sidebar-link ">
                   <span>Migrating our Page</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="../session-2/splitting-out-components.html" class="sidebar-link ">
+                <a href="splitting-out-components.html" class="sidebar-link ">
                   <span>Splitting our Components</span>
                 </a>
               </li>
@@ -232,15 +232,15 @@
 <div class="content">
   <div class="content-wrapper">
     <div class="header-content">
-      <h1 class="title-page">The React Ecosystem</h1>
+      <h1 class="title-page">Components</h1>
       
-        <div class="subtitle-page">Setting up a React app</div>
+        <div class="subtitle-page">Fundamental building blocks.</div>
       
 
       <!--
       <div class="page-actions">
         <div class="actions-group">
-          <a class="btn tertiary small round lowercase" href="https://github.com/jahed/react-dojo/tree/master/docs/source/session-1/index.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
+          <a class="btn tertiary small round lowercase" href="https://github.com/jahed/react-dojo/tree/master/docs/source/session-2/components.md" target="_blank"><span class="icon-github"></span> <span>Edit on GitHub</span></a>
           
         </div>
       </div>
@@ -248,7 +248,19 @@
     </div>
 
     <div class="document-formatting">
-      <p>In this session we’ll be going through the React Ecosystem. We’ll see how we can build a modern Javascript app using Babel to write cutting-edge and augmented JavaScript, and Webpack to bundle our source files without worrying too much about browser compatibility.</p>
+      <p>Before we starting writing the app, it’s worth going through some of the concepts React introduces.</p>
+<p>To make it easier to explain, I won’t be differentiating between what <code>react</code> provides vs <code>react-dom</code>.</p>
+<h2 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h2><p>A Component takes zero or more <code>props</code> and returns a <code>node</code>. One of these props can be <code>children</code> which is also a <code>node</code> and so allows nesting Components within Components.</p>
+<p>There’s two ways to write components. Using Functions or Classes.</p>
+<h3 id="Functional-Components"><a href="#Functional-Components" class="headerlink" title="Functional Components"></a>Functional Components</h3><p>The most basic Component is a function.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Application</span>(<span class="params">&#123; children &#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"Application"</span>&gt;</span></span></div><div class="line">            &#123;children&#125;</div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Class-Components"><a href="#Class-Components" class="headerlink" title="Class Components"></a>Class Components</h3><p>The most basic Class Component needs to implement the <code>render</code> function.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Application</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">const</span> &#123; children &#125; = <span class="keyword">this</span>.props</div><div class="line">        <span class="keyword">return</span> (</div><div class="line">            <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"Application"</span>&gt;</span></span></div><div class="line">                &#123;children&#125;</div><div class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>This makes it essentially the same as a Functional Component. However, Class Components also allow you to hook into the <a href="https://facebook.github.io/react/docs/react-component.html" target="_blank" rel="external">Component Lifecycle</a>. We’ll be going into this lifecycle in a future session.</p>
+<p>For the most part, Functional Components are ideal as they’re simple and don’t introduce special casing and state.</p>
+<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>A Node is anything that can be rendered by <code>react-dom</code>. Meaning it can be either a React Element; a String or Number (i.e. Text Element); or an Array of them.</p>
+<h2 id="Element"><a href="#Element" class="headerlink" title="Element"></a>Element</h2><p>An Element is an instance of a Component with Props.</p>
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><p>Props is just a plain object that’s passed into a component. Changing a prop will cause a Component to re-render.</p>
 
     </div>
   </div>
@@ -258,17 +270,17 @@
       
       
         <a class="link primary prev"
-          href="../index.html">
+          href="index.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Introduction
+          Basics
         </a>
       
       
         <a class="link primary next"
-          href="prerequisites.html">
+          href="creating-a-component.html">
           <span class="subtitle-pagination">Next</span>
-          Prerequisites
+          Creating a Component
           <span class="icon-arrow-right-alt"></span>
         </a>
       
@@ -276,7 +288,7 @@
   </div>
 
   <div class="github">
-    <a class="link tertiary " href="https://github.com/jahed/react-dojo/tree/master/docs/source/session-1/index.md" target="_blank">
+    <a class="link tertiary " href="https://github.com/jahed/react-dojo/tree/master/docs/source/session-2/components.md" target="_blank">
       <span class="icon-github"></span>Edit on GitHub</a>
   </div>
 
