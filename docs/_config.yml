@@ -95,6 +95,12 @@ nav_links:
 github_repo: jahed/react-dojo
 content_root: docs/source
 
+apis:
+  ga: UA-63585440-5
+  docsearch:
+    apiKey: 50b8cbfeea66dcb98aa83f280dc84626
+    indexName: react-dojo
+
 sidebar_categories:
   null:
     - index
