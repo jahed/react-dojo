@@ -3,7 +3,7 @@ title: Migrating our Page
 description: "It's (almost) as simple as copy and paste."
 ---
 
-Let's migrate our entire page from the CSS Dojo all in one go.
+Let's migrate our entire page from the CSS Dojo all in one go. You'll only need the content inside the `<body>`, not the whole thing.
 
 ```js
 // ~/components/Application/index.jsx
@@ -13,7 +13,7 @@ import './styles.scss'
 export default function Application() {
     return (
         <div className="Application">
-            {/* Paste the <body> here! */}
+            {/* Paste the content of the <body> here! */}
         </div>
     )
 }
@@ -53,7 +53,16 @@ import featureBgImage from '~/images/dominion.jpg'
 style={{ backgroundImage: `url(${featureBgImage})` }}
 ```
 
-Here's we're using Webpack to resolve our image and provide the URL to our `style` object.
+Here we're using Webpack to resolve our image and provide the URL to our `style` object.
+
+You'll also notice the double-braces when assigning the prop. The first brace indicates a prop value, the second set defines the JavaScript object to assign.
+
+```
+some-prop="a string"         // a string
+some-prop={9001}             // a number
+some-prop                    // resolves to some-prop={true}
+some-prop={{ key: 'value' }} // an object
+```
 
 
 ## Conclusion
