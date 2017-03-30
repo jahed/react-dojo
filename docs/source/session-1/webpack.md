@@ -317,11 +317,13 @@ npm install --save-dev cross-env
 
 ### Building for Development
 
-We can run the Dev Server.
+We can run the Dev Server while developing.
 
 ```sh
 NODE_ENV=development webpack-dev-server --progress
 ```
+
+This will start a HTTP server on `http://localhost:8080/` as defined in our `webpack.config.js`.
 
 ### Building for Production
 
@@ -331,6 +333,23 @@ Just run Webpack!
 NODE_ENV=production webpack
 ```
 
+### Using npm to run commands
+
+We can alias commands using npm. Add the following to your `package.json`.
+
+```json
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --progress",
+    "build:production": "cross-env NODE_ENV=production webpack"
+  }
+```
+
+Now you can just run the appropriate alias.
+
+```sh
+npm run start
+npm run build:production
+```
 
 ## Conclusion
 

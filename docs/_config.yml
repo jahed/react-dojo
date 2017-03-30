@@ -108,6 +108,10 @@ sidebar_categories:
     - session-1/webpack
     - session-1/conclusion
   Session 2:
-    - session-2
+    - session-2/index
+    - session-2/components
+    - session-2/creating-a-component
+    - session-2/migrating-our-page
+    - session-2/splitting-out-components
   Session 3:
     - session-3

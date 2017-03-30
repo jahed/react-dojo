@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 14px/1.5em 'Arial', sans-serif;
+}
+
+.clearfix, .container, .row, .column {
+    overflow: auto;
+}
+
+.container {
+    min-width: 320px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    margin: 50px -15px;
+}
+
+.row-large {
+    margin: 80px 0;
+}
+
+.row-small {
+    margin: 15px 0;
+}
+
+.column {
+    float:left;
+    padding: 0 15px;
+}
+
+.column-full {
+    width: 100%;
+}
+
+.column-half {
+    width: 50%;
+}
+
+.column-third {
+    width: 33.33%;
+}
+
+.top {
+    background: #333333;
+    color:#ffffff;
+    line-height: 50px;
+}
+
+.top h1 {
+    margin: 0;
+    float:left;
+}
+
+.top a {
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.top a, .top ul::before {
+    border: 1px solid transparent;
+    transition: border 0.3s;
+}
+
+.top a:hover, .top ul:hover::after {
+    border-color: #ffffff;
+}
+
+.top ul {
+    float: left;
+    margin: 0 0 0 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.top ul li {
+    float:left;
+    margin: 0 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.feature {
+    position: relative;
+    overflow: hidden;
+    color: #eeeeee;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.feature-bg {
+    position: absolute;
+    top: -100px;
+    bottom: -100px;
+    left: -100px;
+    right: -100px;
+
+    z-index: -1000;
+
+    background-size: cover;
+    background-position: center;
+
+    -webkit-filter: blur(5px) brightness(0.5);
+    -moz-filter: blur(5px) brightness(0.5);
+    -o-filter: blur(5px) brightness(0.5);
+    -ms-filter: blur(5px) brightness(0.5);
+    filter: blur(5px) brightness(0.5);
+}
+
+.bottom {
+    background-color: #eeeeee;
+    color: #999999;
+    text-align: center;
+}
+
+@media all and (max-width: 600px) {
+    .column {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .top ul {
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        background: #333333;
+        transition: none;
+    }
+
+    .top ul li {
+        float: none;
+        text-align: right;
+    }
+
+    .top ul::after {
+        content: 'MENU';
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin:  10px;
+        line-height: 8px;
+        padding: 10px;
+    }
+
+    .top ul:hover {
+        top: 0;
+        bottom: initial;
+        transition: height 1s;
+    }
+
+    .top ul:hover::after {
+        display: none;
+    }
+}
