@@ -143,6 +143,21 @@ You need to use Components to create Components. So using your Component is no d
 
 Any nested content is resolved as a `children` prop.
 
+## Assigning Props
+
+Here's some different ways you can assign a prop.
+
+```
+some-prop="a string"         // a string
+some-prop={9001}             // a number
+some-prop                    // resolves to some-prop={true}
+some-prop={{ key: 'value' }} // an object, notice the double brace.
+some-prop={aVariable}        // a variable
+some-prop={`a string ${andVariable}`} // a string with a variable
+
+some-prop={any expression}   // really, you can use any expression
+```
+
 ## Iterating on Components
 
 If you want to create a number of Elements, you can just provide an expression which resolves to any array of Elements.
@@ -160,20 +175,3 @@ If you want to create a number of Elements, you can just provide an expression w
 You have to provide a `key` prop which is unique for each element of the array. Otherwise, React won't be able to keep track of
 which Element is which when running its [diffing](https://facebook.github.io/react/docs/reconciliation.html). So without a `key`, if you remove an element, it will re-render the whole tree
 instead of just removing one Element.
-
-## Assigning Props
-
-You'll also notice the double-braces when assigning the prop. The first brace indicates a prop value, the second set defines the JavaScript object to assign
-
-Here's some different ways you can assign a prop.
-
-```
-some-prop="a string"         // a string
-some-prop={9001}             // a number
-some-prop                    // resolves to some-prop={true}
-some-prop={{ key: 'value' }} // an object
-some-prop={aVariable}        // a variable
-some-prop={`a string ${andVariable}`} // a string with a variable
-
-some-prop={any expression}   // really, you can use any expression
-```
