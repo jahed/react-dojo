@@ -117,8 +117,8 @@ sidebar_categories:
     - session-2/index
     - session-2/components
     - session-2/creating-a-component
+    - session-2/preparing-for-migration
     - session-2/migrating-our-page
-    - session-2/splitting-out-components
     - session-2/conclusion
   Session 3:
     - session-3

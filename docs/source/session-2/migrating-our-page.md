@@ -13,7 +13,7 @@ import './styles.scss'
 export default function Application() {
     return (
         <div className="Application">
-            {/* Paste the content of the <body> here! */}
+            {/* Paste the content of the <body> here and remove the curly braces! */}
         </div>
     )
 }
@@ -34,12 +34,11 @@ The main takeaway here is that JSX, while similar to HTML, has a few differences
 
 ### Keyword Conflicts
 
-For one, as mentioned before, the `class` attribute conflicts with JavaScripts `class` keyword, so we need to use `className` instead in JSX.
+For one, the `class` attribute conflicts with JavaScripts `class` keyword, so we need to use `className` instead in JSX.
 
 ### Props aren't Attributes!
 
 While some props are similar to attributes, some aren't. The `style` prop for example takes an object rather than a string like it would in HTML. So...
-
 
 ```
 style="background-image: url('/images/dominion.jpg');"
@@ -53,16 +52,11 @@ import featureBgImage from '~/images/dominion.jpg'
 style={{ backgroundImage: `url(${featureBgImage})` }}
 ```
 
-Here we're using Webpack to resolve our image and provide the URL to our `style` object.
+Here we're using Webpack to include our image in our build and provide the URL to our `style` object. Without the import, Webpack will assume the image is unused and not include it.
 
-You'll also notice the double-braces when assigning the prop. The first brace indicates a prop value, the second set defines the JavaScript object to assign.
+## Splitting our Components
 
-```
-some-prop="a string"         // a string
-some-prop={9001}             // a number
-some-prop                    // resolves to some-prop={true}
-some-prop={{ key: 'value' }} // an object
-```
+Now we have a massive component rendering a ton of elements with a lot of reptition. Try it yourself, split the component into smaller components using nested components (`children`).
 
 
 ## Conclusion
