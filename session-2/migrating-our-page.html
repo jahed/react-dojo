@@ -202,16 +202,16 @@
               </li>
             
               
-              <li class="item-toc  current">
-                <a href="" class="sidebar-link  current">
-                  <span>Migrating our Page</span>
+              <li class="item-toc ">
+                <a href="preparing-for-migration.html" class="sidebar-link ">
+                  <span>Preparing for Migration</span>
                 </a>
               </li>
             
               
-              <li class="item-toc ">
-                <a href="splitting-out-components.html" class="sidebar-link ">
-                  <span>Splitting our Components</span>
+              <li class="item-toc  current">
+                <a href="" class="sidebar-link  current">
+                  <span>Migrating our Page</span>
                 </a>
               </li>
             
@@ -265,19 +265,18 @@
 
     <div class="document-formatting">
       <p>Let’s migrate our entire page from the CSS Dojo all in one go. You’ll only need the content inside the <code>&lt;body&gt;</code>, not the whole thing.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/components/Application/index.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"><span class="keyword">import</span> <span class="string">'./styles.scss'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Application</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        &lt;div className="Application"&gt;</div><div class="line">            &#123;/* Paste the content of the &lt;body&gt; here! */&#125;</div><div class="line">        &lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/components/Application/index.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"><span class="keyword">import</span> <span class="string">'./styles.scss'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Application</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        &lt;div className="Application"&gt;</div><div class="line">            &#123;/* Paste the content of the &lt;body&gt; here and remove the curly braces! */&#125;</div><div class="line">        &lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/components/Application/styles.scss</span></div><div class="line"><span class="comment">// Paste the CSS here</span></div></pre></td></tr></table></figure>
 <p>Check your page… It doesn’t work!</p>
 <h2 id="JSX-vs-HTML"><a href="#JSX-vs-HTML" class="headerlink" title="JSX vs HTML"></a>JSX vs HTML</h2><p>Open your Browser’s Dev Tools and check the log output. React’s logging is extremely useful for debugging. Try fixing the issues yourself.</p>
 <p>The main takeaway here is that JSX, while similar to HTML, has a few differences.</p>
-<h3 id="Keyword-Conflicts"><a href="#Keyword-Conflicts" class="headerlink" title="Keyword Conflicts"></a>Keyword Conflicts</h3><p>For one, as mentioned before, the <code>class</code> attribute conflicts with JavaScripts <code>class</code> keyword, so we need to use <code>className</code> instead in JSX.</p>
+<h3 id="Keyword-Conflicts"><a href="#Keyword-Conflicts" class="headerlink" title="Keyword Conflicts"></a>Keyword Conflicts</h3><p>For one, the <code>class</code> attribute conflicts with JavaScripts <code>class</code> keyword, so we need to use <code>className</code> instead in JSX.</p>
 <h3 id="Props-aren’t-Attributes"><a href="#Props-aren’t-Attributes" class="headerlink" title="Props aren’t Attributes!"></a>Props aren’t Attributes!</h3><p>While some props are similar to attributes, some aren’t. The <code>style</code> prop for example takes an object rather than a string like it would in HTML. So…</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">style=&quot;background-image: url(&apos;/images/dominion.jpg&apos;);&quot;</div></pre></td></tr></table></figure>
 <p>becomes</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import featureBgImage from &apos;~/images/dominion.jpg&apos;</div><div class="line">//...</div><div class="line">style=&#123;&#123; backgroundImage: `url($&#123;featureBgImage&#125;)` &#125;&#125;</div></pre></td></tr></table></figure>
-<p>Here we’re using Webpack to resolve our image and provide the URL to our <code>style</code> object.</p>
-<p>You’ll also notice the double-braces when assigning the prop. The first brace indicates a prop value, the second set defines the JavaScript object to assign.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">some-prop=&quot;a string&quot;         // a string</div><div class="line">some-prop=&#123;9001&#125;             // a number</div><div class="line">some-prop                    // resolves to some-prop=&#123;true&#125;</div><div class="line">some-prop=&#123;&#123; key: &apos;value&apos; &#125;&#125; // an object</div></pre></td></tr></table></figure>
+<p>Here we’re using Webpack to include our image in our build and provide the URL to our <code>style</code> object. Without the import, Webpack will assume the image is unused and not include it.</p>
+<h2 id="Splitting-our-Components"><a href="#Splitting-our-Components" class="headerlink" title="Splitting our Components"></a>Splitting our Components</h2><p>Now we have a massive component rendering a ton of elements with a lot of reptition. Try it yourself, split the component into smaller components using nested components (<code>children</code>).</p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Check the page now, it works! Or at least, it should. If it doesn’t, keep debugging.</p>
 <p>Your <code>source</code> directory should look something like this:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">./answers/session-2/source</div><div class="line">├── components</div><div class="line">│   └── Application</div><div class="line">│       ├── index.jsx</div><div class="line">│       └── styles.scss</div><div class="line">├── images</div><div class="line">│   └── dominion.jpg</div><div class="line">├── index.html.ejs</div><div class="line">└── index.jsx</div></pre></td></tr></table></figure>
@@ -290,17 +289,17 @@
       
       
         <a class="link primary prev"
-          href="creating-a-component.html">
+          href="preparing-for-migration.html">
           <span class="icon-arrow-left-alt"></span>
           <span class="subtitle-pagination">Previous</span>
-          Creating a Component
+          Preparing for Migration
         </a>
       
       
         <a class="link primary next"
-          href="splitting-out-components.html">
+          href="conclusion.html">
           <span class="subtitle-pagination">Next</span>
-          Splitting our Components
+          Conclusion
           <span class="icon-arrow-right-alt"></span>
         </a>
       

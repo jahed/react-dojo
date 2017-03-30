@@ -5,7 +5,7 @@
 
     <!-- Basic -->
     <title>Creating a Component | React Dojo</title>
-    <meta name="description" content="How to structure a React Component">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/react-dojo/images/favicon.png" sizes="16x16 32x32 64x64">
 
@@ -13,12 +13,12 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="http://jahed.github.io/react-dojo">
     <meta property="og:title" content="Creating a Component | React Dojo">
-    <meta property="og:description" content="How to structure a React Component">
+    <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="twitter:card" content="summary_image_large">
     <meta name="twitter:site" content="@hedjahead">
     <meta name="twitter:title" content="Creating a Component | React Dojo">
-    <meta name="twitter:description" content="How to structure a React Component">
+    <meta name="twitter:description" content="">
     <meta name="twitter:image" content="">
 
     <!-- Misc -->
@@ -203,15 +203,15 @@
             
               
               <li class="item-toc ">
-                <a href="migrating-our-page.html" class="sidebar-link ">
-                  <span>Migrating our Page</span>
+                <a href="preparing-for-migration.html" class="sidebar-link ">
+                  <span>Preparing for Migration</span>
                 </a>
               </li>
             
               
               <li class="item-toc ">
-                <a href="splitting-out-components.html" class="sidebar-link ">
-                  <span>Splitting our Components</span>
+                <a href="migrating-our-page.html" class="sidebar-link ">
+                  <span>Migrating our Page</span>
                 </a>
               </li>
             
@@ -250,8 +250,6 @@
     <div class="header-content">
       <h1 class="title-page">Creating a Component</h1>
       
-        <div class="subtitle-page">How to structure a React Component</div>
-      
 
       <!--
       <div class="page-actions">
@@ -264,21 +262,38 @@
     </div>
 
     <div class="document-formatting">
-      <p>Let’s start by making our first, top-most component, <code>Application</code>.</p>
-<p>In our <code>source</code>, we can create a <code>components</code> directory. In here we’ll place all of our components.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd source</div><div class="line">mkdir components</div></pre></td></tr></table></figure>
-<p>For every component, we’ll have a directory named after the components with an <code>index.jsx</code> and <code>styles.scss</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd components</div><div class="line">mkdir Application</div><div class="line">cd Application</div><div class="line">touch index.jsx</div><div class="line">touch styles.scss</div></pre></td></tr></table></figure>
-<p>Now some boilerplate for the <code>index.jsx</code>.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/components/Application/index.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"><span class="keyword">import</span> <span class="string">'./styles.scss'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Application</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">className</span>=<span class="string">"Application"</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>We need to import <code>React</code> in all of our JSX files since JSX is just sugar around function calls on <code>React</code>.</p>
-<p>We can also import the <code>styles.scss</code> for our component. This will add a <code>&lt;style&gt;</code> on our page to style the component.</p>
-<p>We don’t need to hook into the lifecycle, so we’re using a functional component.</p>
-<p>It’s useful to name the <code>className</code> after the component’s name so that we’re consistent when referring to the component in our styles.</p>
-<p>You’ll notice we’re returning the same content which we had in our previous session. So now, we can swap it in. In our <strong>top-level</strong> <code>index.jsx</code>.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/index.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> Application <span class="keyword">from</span> <span class="string">'~/components/Application'</span></div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Application</span> /&gt;</span>,</span></div><div class="line">  document.getElementById('ROOT')</div><div class="line">);</div></pre></td></tr></table></figure>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Your <code>source</code> directory should look something like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">./answers/session-2/source</div><div class="line">├── components</div><div class="line">│   └── Application</div><div class="line">│       ├── index.jsx</div><div class="line">│       └── styles.scss</div><div class="line">├── index.html.ejs</div><div class="line">└── index.jsx</div></pre></td></tr></table></figure>
+      <p>Remember, a Functional Component is written as so:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">YourComponent</span>(<span class="params">&#123; prop1, children &#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        &lt;div className="YourComponent"&gt;</div><div class="line">            &lt;h1&gt;&#123;prop1&#125;&lt;/h1&gt;</div><div class="line">            &lt;p&gt;&#123;children&#125;&lt;/p&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="How-not-to-define-a-component"><a href="#How-not-to-define-a-component" class="headerlink" title="How not to define a component"></a>How not to define a component</h2><p>A Component must evaluate to a <em>single</em> node. You can’t have an array. So you can’t do the following:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">YourComponent</span>(<span class="params">&#123; prop1, children &#125;</span>) </span>&#123;</div><div class="line">    <span class="comment">// THIS IS NOT ALLOWED!</span></div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        &lt;div className="YourComponentOne" /&gt;</div><div class="line">        &lt;span className="YourComponentTwo" /&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Use <code>&lt;div&gt;</code>s to wrap components if you have to.</p>
+<h2 id="Using-Props-in-a-Component"><a href="#Using-Props-in-a-Component" class="headerlink" title="Using Props in a Component"></a>Using Props in a Component</h2><p>If you’re wondering about the curly braces in the function arguments</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">YourComponent</span>(<span class="params">&#123; prop1, children &#125;</span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>it’s essentially a short hand for</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">YourComponent</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> &#123; prop1, children &#125; = props</div><div class="line">    <span class="comment">// ...</span></div></pre></td></tr></table></figure>
+<p>which in turn is a shorthand for</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">YourComponent</span>(<span class="params">props</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> prop1 = props.prop1</div><div class="line">    <span class="keyword">const</span> children = props.children</div><div class="line">    <span class="comment">// ...</span></div></pre></td></tr></table></figure>
+<p>Using the braces to assign variables from objects is called <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="external">Object Destructuring</a> and was introduced in ES2015.</p>
+<h2 id="Detecting-Invalid-Prop-Types"><a href="#Detecting-Invalid-Prop-Types" class="headerlink" title="Detecting Invalid Prop Types"></a>Detecting Invalid Prop Types</h2><p>Sometimes, you might get into a situation where you’re passing in the wrong values to your props. React can help you debug these situations using <code>propTypes</code>. If a given value does not match an assigned <code>PropType</code>, React will log a warning to identify the issue.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; PropTypes &#125; <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">YourComponent</span>(<span class="params">&#123; prop1, children &#125;</span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">YourCommponent.propTypes = &#123;</div><div class="line">    <span class="attr">prop1</span>: PropTypes.string</div><div class="line">    children: PropTypes.node.isRequired</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Assigning-Default-Props"><a href="#Assigning-Default-Props" class="headerlink" title="Assigning Default Props"></a>Assigning Default Props</h2><p>If you want to fallback to a default value for your props, you can use <code>defaultProps</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; PropTypes &#125; <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">YourComponent</span>(<span class="params">&#123; prop1, children &#125;</span>) </span>&#123;</div><div class="line">    <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">YourComponent.defaultProps = &#123;</div><div class="line">    <span class="attr">prop1</span>: <span class="string">'A Heading'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Forwarding-Props"><a href="#Forwarding-Props" class="headerlink" title="Forwarding Props"></a>Forwarding Props</h2><p>If you’re wrapping a component but want to forward some props to the wrapped component, you can use Object Spreading and the <code>...rest</code> syntax when Object Destructuring.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Section</span>(<span class="params">&#123; heading, children ...props &#125;</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        &lt;section &#123;...props&#125;&gt;</div><div class="line">            &lt;h2&gt;&#123;heading&#125;&lt;/h2&gt;</div><div class="line">            &lt;p&gt;&#123;children&#125;&lt;/p&gt;</div><div class="line">        &lt;/section&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>So doing something like:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Section className=<span class="string">"fancy"</span> heading=<span class="string">"Hello"</span>&gt;</div><div class="line">    World!</div><div class="line">&lt;/Section&gt;</div></pre></td></tr></table></figure>
+<p>Will evaluate to:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;section className=<span class="string">"fancy"</span>&gt;</div><div class="line">    &lt;h2&gt;Hello!&lt;/h2&gt;</div><div class="line">    &lt;p&gt;World!&lt;/p&gt;</div><div class="line">&lt;<span class="regexp">/section&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Using-a-Component"><a href="#Using-a-Component" class="headerlink" title="Using a Component"></a>Using a Component</h2><p>You need to use Components to create Components. So using your Component is no different than what you did to create it!</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;YourComponent prop1=<span class="string">"some value"</span>&gt;</div><div class="line">    Some child content</div><div class="line">&lt;<span class="regexp">/YourComponent&gt;</span></div></pre></td></tr></table></figure>
+<p>Any nested content is resolved as a <code>children</code> prop.</p>
+<h2 id="Iterating-on-Components"><a href="#Iterating-on-Components" class="headerlink" title="Iterating on Components"></a>Iterating on Components</h2><p>If you want to create a number of Elements, you can just provide an expression which resolves to any array of Elements.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    &#123;[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>].map(<span class="function"><span class="params">letter</span> =&gt;</span> (</div><div class="line">        &lt;p key=&#123;letter&#125;&gt;</div><div class="line">            &#123;letter&#125;</div><div class="line">        &lt;/p&gt;</div><div class="line">    )&#125;</div><div class="line">&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<p>You have to provide a <code>key</code> prop which is unique for each element of the array. Otherwise, React won’t be able to keep track of<br>which Element is which when running its <a href="https://facebook.github.io/react/docs/reconciliation.html" target="_blank" rel="external">diffing</a>. So without a <code>key</code>, if you remove an element, it will re-render the whole tree<br>instead of just removing one Element.</p>
+<h2 id="Assigning-Props"><a href="#Assigning-Props" class="headerlink" title="Assigning Props"></a>Assigning Props</h2><p>You’ll also notice the double-braces when assigning the prop. The first brace indicates a prop value, the second set defines the JavaScript object to assign</p>
+<p>Here’s some different ways you can assign a prop.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">some-prop=&quot;a string&quot;         // a string</div><div class="line">some-prop=&#123;9001&#125;             // a number</div><div class="line">some-prop                    // resolves to some-prop=&#123;true&#125;</div><div class="line">some-prop=&#123;&#123; key: &apos;value&apos; &#125;&#125; // an object</div><div class="line">some-prop=&#123;aVariable&#125;        // a variable</div><div class="line">some-prop=&#123;`a string $&#123;andVariable&#125;`&#125; // a string with a variable</div><div class="line"></div><div class="line">some-prop=&#123;any expression&#125;   // really, you can use any expression</div></pre></td></tr></table></figure>
+
     </div>
   </div>
 
@@ -295,9 +310,9 @@
       
       
         <a class="link primary next"
-          href="migrating-our-page.html">
+          href="preparing-for-migration.html">
           <span class="subtitle-pagination">Next</span>
-          Migrating our Page
+          Preparing for Migration
           <span class="icon-arrow-right-alt"></span>
         </a>
       
