@@ -19,10 +19,10 @@ git init
 Make it a Node package. You can skip through the options it gives you.
 
 ```
-npm init
+npm init && npm install
 ```
 
-This will create a `package.json` at the root of your project.
+This will create a `package.json` file and `node_modules` directory at the root of your project.
 
 Let's create a source directory.
 
