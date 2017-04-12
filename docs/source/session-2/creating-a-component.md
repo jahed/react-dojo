@@ -104,9 +104,9 @@ If you're wrapping a component but want to forward some props to the wrapped com
 ```js
 import React from 'react'
 
-export default function Section({ heading, children ...props }) {
+export default function Section({ heading, children ...otherProps }) {
     return (
-        <section {...props}>
+        <section {...otherProps}>
             <h2>{heading}</h2>
             <p>{children}</p>
         </section>
@@ -148,12 +148,12 @@ Any nested content is resolved as a `children` prop.
 Here's some different ways you can assign a prop.
 
 ```
-some-prop="a string"         // a string
-some-prop={9001}             // a number
-some-prop                    // resolves to some-prop={true}
-some-prop={{ key: 'value' }} // an object, notice the double brace.
-some-prop={aVariable}        // a variable
-some-prop={`a string ${andVariable}`} // a string with a variable
+someProp="a string"         // a string
+someProp={9001}             // a number
+someProp                    // resolves to some-prop={true}
+someProp={{ key: 'value' }} // an object, notice the double brace.
+someProp={aVariable}        // a variable
+someProp={`a string ${andVariable}`} // a string with a variable
 
 some-prop={any expression}   // really, you can use any expression
 ```
@@ -172,6 +172,4 @@ If you want to create a number of Elements, you can just provide an expression w
 </div>
 ```
 
-You have to provide a `key` prop which is unique for each element of the array. Otherwise, React won't be able to keep track of
-which Element is which when running its [diffing](https://facebook.github.io/react/docs/reconciliation.html). So without a `key`, if you remove an element, it will re-render the whole tree
-instead of just removing one Element.
+You have to provide a `key` prop which is unique for each element of the array. Otherwise, React won't be able to keep track of which Element is which when running its [diffing](https://facebook.github.io/react/docs/reconciliation.html). So without a `key`, if you remove an element, it will re-render the whole tree instead of just removing one Element.

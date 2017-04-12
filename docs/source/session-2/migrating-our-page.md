@@ -24,7 +24,7 @@ export default function Application() {
 // Paste the CSS here
 ```
 
-Check your page... It doesn't work!
+Check your page... [It doesn't work!](#_spoiler)
 
 ## JSX vs HTML
 

@@ -23,3 +23,26 @@
 
   .hyphens(auto);
 }
+
+[href="#_spoiler"] {
+  color: transparent !important;
+  background: black !important;
+  position: relative;
+  cursor: default;
+
+  &::after {
+    content: 'SPOILER';
+    font-size: 0.7em;
+    font-family: monospace;
+    color: black !important;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    line-height: 0.7em;
+    font-weight:bold;
+  }
+
+  &:hover {
+    color: white !important;
+  }
+}

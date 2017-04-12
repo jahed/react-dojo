@@ -17,20 +17,45 @@ In our case, things like Webpack and Babel will be in `devDependencies` and Reac
 
 ## Dependency Versions
 
-When saving dependencies, npm saves it in the `package.json` as a minor version requirement as according to the rules of [Semantic Versioning](http://semver.org/). You can change this to be more strict, but we'll be sticking to defaults for this dojo.
+By default, when saving dependencies, npm saves it in the `package.json` as a minor version requirement as according to the rules of [Semantic Versioning](http://semver.org/). You can change this to be more strict by using the `--save-exact` flag when running `npm install`.
+
+I won't be including the `--save-exact` flag when referring to `npm install` in this dojo but I recommend using it to avoid future difficulties when packages update and introduced changes different from those mentioned in this dojo.
+
+You can find a list of representations npm uses for version dependencies in [their documentation](https://docs.npmjs.com/files/package.json#dependencies).
+
+## Installing Dependencies
+
+We can install any package from [npm's repository](https://www.npmjs.com) using one of the following commands in our project directory:
+
+```
+// devDependency, latest version, allow patch updates (default)
+npm install --save-dev <package-name>
+
+// devDependency, latest version, allow no updates
+npm install --save-dev --save-exact <package-name>
+
+// devDependency, exact version, allow no updates
+npm install --save-dev <package-name>@1.0.2
+
+// devDependency, latest version of v1.x.x, allow minor updates
+npm install --save-dev <package-name>@1
+
+// dependency, minor version, allow patch updates
+npm install --save <package-name>
+```
+
+For a full list of options, [check npm's documentation](https://docs.npmjs.com/files/package.json).
 
 ## Dependency Files
 
 The files for these dependencies are saved in the `node_modules` directory at the root of your project. You'll want to add this directory to your `.gitignore`.
 
-## Installing Dependencies
+## Updating Dependencies
 
-We can install any package from [npm's repository](https://www.npmjs.com) using the following command in our project directory:
+You can run `npm update` to update your local dependencies based on your version requirements. Of course, if you're using `--save-exact`, `npm update` won't achieve anything.
 
-```
-// devDependency
-npm install --save-dev <package-name>
+So, to make sure we're not falling behind versions, we can use third-party tools like [`npm-check`](https://github.com/dylang/npm-check) to check and update our dependencies. This is especially useful when using `--save-exact` as it gives up more control on when to update.
 
-// dependency
-npm install --save     <package-name>
-```
+![](/react-dojo/images/session-1-npm-check.png)
+
+For this dojo, we won't be referring back to `npm-check` but it's worth mentioning.

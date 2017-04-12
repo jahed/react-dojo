@@ -8,11 +8,13 @@ Webpack is a module bundler. It takes our source code and bundles it into a sing
 
 To do this, Webpack takes our source code and passes it through multiple transformations. There are two phases to these transformations: Loaders and Plugins.
 
+![](/react-dojo/images/session-1-webpack.png)
+
 > ### Note
 >
 > We'll be using Webpack 1.x. Webpack 2.x has been released as of writing but for our needs, they aren't too different.
 >
-> Configuring Webpack can seem extremely complicated. You can look at the Project Template to see where we are heading.
+> Configuring Webpack can seem extremely complicated. You can look at the [Project Template](https://github.com/jahed/react-dojo/tree/master/code) to see where we are heading.
 
 ## Configuring Webpack
 
@@ -104,7 +106,7 @@ npm install --save-dev babel-loader
 
 ### json-loader
 
-The `json-loader` converts JSON into a JavaScript object.
+The `json-loader` converts JSON into a JavaScript object. The simplicity of this loader makes it a good example of what a loader is doing. [Check out its source code](https://raw.githubusercontent.com/webpack-contrib/json-loader/1409807e8e32c4f54248ffe44624cd12c84a6202/index.js).
 
 ```sh
 npm install --save-dev json-loader
