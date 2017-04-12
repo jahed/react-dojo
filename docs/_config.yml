@@ -5,14 +5,14 @@
 # Site
 title: React Dojo
 subtitle:
-description:
+description: Learn the basics of React
 author: Jahed Ahmed
-language:
-timezone:
+language: en-GB
+timezone: UTC
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://jahed.github.io/react-dojo
+url: http://jahed.github.io/react-dojo/
 root: /react-dojo/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -81,11 +81,11 @@ social_links:
   twitter: '@hedjahead'
 
 logo:
-  nav_mobile: images/react.svg
-  title: React
-  subtitle: Dojo
-  url: http://jahed.github.io/react-dojo
-favicon: images/favicon.png
+  nav_mobile: /react-dojo/images/react-logo.png
+  title: React Dojo
+  subtitle:
+  url: /react-dojo/
+favicon: /react-dojo/images/favicon.png
 
 nav_links:
   'Source':
