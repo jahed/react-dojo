@@ -18,3 +18,5 @@ After you've done all the set up, you should have a project directory which look
 ```
 
 If you run the Dev Server and visit [`http://localhost:8080`](http://localhost:8080) you should see a "Hello, World!".
+
+![](/react-dojo/images/session-1-conclusion.png)
