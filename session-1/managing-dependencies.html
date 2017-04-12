@@ -7,7 +7,7 @@
     <title>Managing Dependencies | React Dojo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="/react-dojo/images/favicon.png" sizes="16x16 32x32 64x64">
+    <link rel="shortcut icon" type="image/png" href="/react-dojo//react-dojo/images/favicon.png" sizes="16x16 32x32 64x64">
 
     <!-- Social -->
     <meta property="og:type" content="article">
@@ -37,10 +37,9 @@
       </span>
     </div>
     <div class="nav-item">
-      <a class="logo-wrapper" href="http://jahed.github.io/react-dojo" title="React Dojo"  >
-        <!--<img src="images/react.svg" alt="React" class="logo"/> -->
-        <span>React</span>
-        <span>Dojo</span>
+      <a class="logo-wrapper" href="/react-dojo/" title="React Dojo "  >
+        <img src="/react-dojo/images/react-logo.png" alt="React Dojo" class="logo"/>
+        <span></span>
       </a>
     </div>
   </div>
@@ -60,8 +59,8 @@
   <div class="panel">
     <!--
     <div class="panel-item">
-      <a class="" href="http://jahed.github.io/react-dojo" title="React"  >
-        <span>React Dojo</span>
+      <a class="" href="/react-dojo/" title="React Dojo"  >
+        <span>React Dojo </span>
       </a>
     </div>
     -->
@@ -270,10 +269,17 @@
 <li><code>peerDependcies</code> are packages your package depends on but doesn’t include. This allows projects that require your package to use their own dependencies instead of every package including their own.</li>
 </ul>
 <p>In our case, things like Webpack and Babel will be in <code>devDependencies</code> and React will be in <code>dependencies</code>. We won’t be using <code>peerDependencies</code>, but the packages we use might.</p>
-<h2 id="Dependency-Versions"><a href="#Dependency-Versions" class="headerlink" title="Dependency Versions"></a>Dependency Versions</h2><p>When saving dependencies, npm saves it in the <code>package.json</code> as a minor version requirement as according to the rules of <a href="http://semver.org/" target="_blank" rel="external">Semantic Versioning</a>. You can change this to be more strict, but we’ll be sticking to defaults for this dojo.</p>
+<h2 id="Dependency-Versions"><a href="#Dependency-Versions" class="headerlink" title="Dependency Versions"></a>Dependency Versions</h2><p>By default, when saving dependencies, npm saves it in the <code>package.json</code> as a minor version requirement as according to the rules of <a href="http://semver.org/" target="_blank" rel="external">Semantic Versioning</a>. You can change this to be more strict by using the <code>--save-exact</code> flag when running <code>npm install</code>.</p>
+<p>I won’t be including the <code>--save-exact</code> flag when referring to <code>npm install</code> in this dojo but I recommend using it to avoid future difficulties when packages update and introduced changes different from those mentioned in this dojo.</p>
+<p>You can find a list of representations npm uses for version dependencies in <a href="https://docs.npmjs.com/files/package.json#dependencies" target="_blank" rel="external">their documentation</a>.</p>
+<h2 id="Installing-Dependencies"><a href="#Installing-Dependencies" class="headerlink" title="Installing Dependencies"></a>Installing Dependencies</h2><p>We can install any package from <a href="https://www.npmjs.com" target="_blank" rel="external">npm’s repository</a> using one of the following commands in our project directory:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// devDependency, latest version, allow patch updates (default)</div><div class="line">npm install --save-dev &lt;package-name&gt;</div><div class="line"></div><div class="line">// devDependency, latest version, allow no updates</div><div class="line">npm install --save-dev --save-exact &lt;package-name&gt;</div><div class="line"></div><div class="line">// devDependency, exact version, allow no updates</div><div class="line">npm install --save-dev &lt;package-name&gt;@1.0.2</div><div class="line"></div><div class="line">// devDependency, latest version of v1.x.x, allow minor updates</div><div class="line">npm install --save-dev &lt;package-name&gt;@1</div><div class="line"></div><div class="line">// dependency, minor version, allow patch updates</div><div class="line">npm install --save &lt;package-name&gt;</div></pre></td></tr></table></figure>
+<p>For a full list of options, <a href="https://docs.npmjs.com/files/package.json" target="_blank" rel="external">check npm’s documentation</a>.</p>
 <h2 id="Dependency-Files"><a href="#Dependency-Files" class="headerlink" title="Dependency Files"></a>Dependency Files</h2><p>The files for these dependencies are saved in the <code>node_modules</code> directory at the root of your project. You’ll want to add this directory to your <code>.gitignore</code>.</p>
-<h2 id="Installing-Dependencies"><a href="#Installing-Dependencies" class="headerlink" title="Installing Dependencies"></a>Installing Dependencies</h2><p>We can install any package from <a href="https://www.npmjs.com" target="_blank" rel="external">npm’s repository</a> using the following command in our project directory:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// devDependency</div><div class="line">npm install --save-dev &lt;package-name&gt;</div><div class="line"></div><div class="line">// dependency</div><div class="line">npm install --save     &lt;package-name&gt;</div></pre></td></tr></table></figure>
+<h2 id="Updating-Dependencies"><a href="#Updating-Dependencies" class="headerlink" title="Updating Dependencies"></a>Updating Dependencies</h2><p>You can run <code>npm update</code> to update your local dependencies based on your version requirements. Of course, if you’re using <code>--save-exact</code>, <code>npm update</code> won’t achieve anything.</p>
+<p>So, to make sure we’re not falling behind versions, we can use third-party tools like <a href="https://github.com/dylang/npm-check" target="_blank" rel="external"><code>npm-check</code></a> to check and update our dependencies. This is especially useful when using <code>--save-exact</code> as it gives up more control on when to update.</p>
+<p><img src="/react-dojo/images/session-1-npm-check.png" alt=""></p>
+<p>For this dojo, we won’t be referring back to <code>npm-check</code> but it’s worth mentioning.</p>
 
     </div>
   </div>

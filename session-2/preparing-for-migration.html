@@ -7,7 +7,7 @@
     <title>Preparing for Migration | React Dojo</title>
     <meta name="description" content="How to structure a React Component">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="/react-dojo/images/favicon.png" sizes="16x16 32x32 64x64">
+    <link rel="shortcut icon" type="image/png" href="/react-dojo//react-dojo/images/favicon.png" sizes="16x16 32x32 64x64">
 
     <!-- Social -->
     <meta property="og:type" content="article">
@@ -37,10 +37,9 @@
       </span>
     </div>
     <div class="nav-item">
-      <a class="logo-wrapper" href="http://jahed.github.io/react-dojo" title="React Dojo"  >
-        <!--<img src="images/react.svg" alt="React" class="logo"/> -->
-        <span>React</span>
-        <span>Dojo</span>
+      <a class="logo-wrapper" href="/react-dojo/" title="React Dojo "  >
+        <img src="/react-dojo/images/react-logo.png" alt="React Dojo" class="logo"/>
+        <span></span>
       </a>
     </div>
   </div>
@@ -60,8 +59,8 @@
   <div class="panel">
     <!--
     <div class="panel-item">
-      <a class="" href="http://jahed.github.io/react-dojo" title="React"  >
-        <span>React Dojo</span>
+      <a class="" href="/react-dojo/" title="React Dojo"  >
+        <span>React Dojo </span>
       </a>
     </div>
     -->
@@ -270,13 +269,13 @@
 <p>For every component, we’ll have a directory named after the components with an <code>index.jsx</code> and <code>styles.scss</code>.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd components</div><div class="line">mkdir Application</div><div class="line">cd Application</div><div class="line">touch index.jsx</div><div class="line">touch styles.scss</div></pre></td></tr></table></figure>
 <p>Now some boilerplate for the <code>index.jsx</code>.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/components/Application/index.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"><span class="keyword">import</span> <span class="string">'./styles.scss'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Application</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        &lt;h1 className="Application"&gt;Hello, world!&lt;/h1&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/components/Application/index.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"><span class="keyword">import</span> <span class="string">'./styles.scss'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">Application</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">className</span>=<span class="string">"Application"</span>&gt;</span>Hello, world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>We need to import <code>React</code> in all of our JSX files since JSX is just sugar around function calls on <code>React</code>.</p>
 <p>We can also import the <code>styles.scss</code> for our component. This will add a <code>&lt;style&gt;</code> on our page to style the component.</p>
 <p>We don’t need to hook into the lifecycle, so we’re using a functional component.</p>
 <p>It’s useful to name the <code>className</code> after the component’s name so that we’re consistent when referring to the component in our styles.</p>
 <p>You’ll notice we’re returning the same content which we had in our previous session. So now, we can swap it in. In our <strong>top-level</strong> <code>index.jsx</code>.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/index.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> Application <span class="keyword">from</span> <span class="string">'~/components/Application'</span></div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  &lt;Application /&gt;,</div><div class="line">  document.getElementById('ROOT')</div><div class="line">);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ~/index.jsx</span></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> Application <span class="keyword">from</span> <span class="string">'~/components/Application'</span></div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Application</span> /&gt;</span>,</span></div><div class="line">  document.getElementById('ROOT')</div><div class="line">);</div></pre></td></tr></table></figure>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Your <code>source</code> directory should look something like this:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">./answers/session-2/source</div><div class="line">├── components</div><div class="line">│   └── Application</div><div class="line">│       ├── index.jsx</div><div class="line">│       └── styles.scss</div><div class="line">├── index.html.ejs</div><div class="line">└── index.jsx</div></pre></td></tr></table></figure>
     </div>

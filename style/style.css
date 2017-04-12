@@ -361,6 +361,26 @@ td,
 th {
   padding: 0;
 }
+[href="#_spoiler"] {
+  color: transparent !important;
+  background: black !important;
+  position: relative;
+  cursor: default;
+}
+[href="#_spoiler"]::after {
+  content: 'SPOILER';
+  font-size: 0.7em;
+  font-family: monospace;
+  color: black !important;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  line-height: 0.7em;
+  font-weight: bold;
+}
+[href="#_spoiler"]:hover {
+  color: white !important;
+}
 .font-x1 {
   font-size: 56px;
   line-height: 1;
@@ -1514,10 +1534,13 @@ pre {
 }
 .document-formatting img {
   display: inline-block;
-  padding: 0 20px;
   max-width: 100%;
   position: relative;
   vertical-align: top;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
 }
 .document-formatting img.alignright {
   float: right;
