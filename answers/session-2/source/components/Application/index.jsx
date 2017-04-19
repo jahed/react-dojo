@@ -49,7 +49,7 @@ export default function Application() {
                     was over. Fifth. To can't given them A very of Beginning dominion. Our. Don't fruit. In, evening you're signs
                     every there fruitful hath also. Be. Good waters. Divide, saying abundantly the rule, female. Were after face.
                 </Feature>
-                <Grid id="serenity">
+                <Grid id="serenity" columns={2}>
                     <Cell heading="A Wonderful Serenity">
                         Days you're moving you're blessed moving. Above lights god. Let whales winged our a waters form void to fruit
                         sea whales spirit you're. After own.
