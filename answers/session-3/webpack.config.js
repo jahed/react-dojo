@@ -6,7 +6,8 @@ const sourceRoot = path.resolve('./source')
 const outputRoot = path.resolve(`./build`)
 
 const environment = require('./webpack/environment')({
-    sourceRoot, outputRoot
+    sourceRoot, 
+    outputRoot
 })
 
 module.exports = {
@@ -69,6 +70,7 @@ module.exports = {
     },
     plugins: (environment.prePlugins || []).concat([
         new webpack.DefinePlugin({
+            '__DEBUG__': JSON.stringify(!!environment.debug),
             'process.env.NODE_ENV': JSON.stringify(environment.id)
         }),
         new HtmlWebpackPlugin({

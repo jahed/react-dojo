@@ -1,6 +1,7 @@
 module.exports = function development({ sourceRoot, outputRoot }) {
     return {
         id: 'development',
+        debug: true,
         devtool: 'inline-source-map',
         devServer: {
             host: '127.0.0.1',
