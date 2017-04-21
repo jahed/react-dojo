@@ -1,0 +1,22 @@
+.Column {
+    padding: 15px;
+}
+
+.Column--size-1 {
+    width: 100%;
+}
+
+.Column--size-2 {
+    width: 50%;
+}
+
+.Column--size-3 {
+    width: 33.33%;
+}
+
+@media all and (max-width: 600px) {
+    .Column {
+        width: 100%;
+        margin: 15px 0;
+    }
+}

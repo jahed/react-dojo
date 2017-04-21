@@ -1,0 +1,29 @@
+.Feature {
+    text-align: center;
+}
+
+.Feature--background {
+    position: relative;
+    overflow: hidden;        
+    color: #eeeeee;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.Feature__Background {
+    position: absolute;
+    top: -100px;
+    bottom: -100px;
+    left: -100px;
+    right: -100px;
+
+    z-index: -1000;
+
+    background-size: cover;
+    background-position: center;
+
+    -webkit-filter: blur(5px) brightness(0.5);
+    -moz-filter: blur(5px) brightness(0.5);
+    -o-filter: blur(5px) brightness(0.5);
+    -ms-filter: blur(5px) brightness(0.5);
+    filter: blur(5px) brightness(0.5);
+}
