@@ -20,3 +20,29 @@ $drawerWidth: 300px;
 .Drawer--active {
     transform: translateX(0);
 }
+
+.Drawer__Navigation {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Drawer__Navigation__Item {
+
+}
+
+.Drawer__Navigation__Item__Link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    padding: 5px 10px;
+
+    border: 1px solid transparent;
+    transition: border 0.3s;
+
+    &:hover {
+        border-color: #ffffff;
+    }
+}
